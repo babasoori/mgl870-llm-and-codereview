@@ -11,7 +11,7 @@ import time
 load_dotenv()
 
 # Extract the secrets
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+MY_GITHUB_TOKEN = os.getenv('MY_GITHUB_TOKEN')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 ASSISTANT_ID = os.getenv('ASSISTANT_ID')
 # Initialize OpenAI and GitHub clients
@@ -19,7 +19,7 @@ client = OpenAI(
     # This is the default and can be omitted
     api_key=OPENAI_API_KEY,
 )
-github = Github(GITHUB_TOKEN)
+github = Github(MY_GITHUB_TOKEN)
 
 
 def review_pull_request(repo_name, pr_number):

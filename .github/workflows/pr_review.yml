@@ -24,6 +24,6 @@ jobs:
       - name: Run PR Review Script
         env:
           ASSISTANT_ID: ${{ secrets.ASSISTANT_ID }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python pr_reviewer_2.py --repo ${{ github.repository }} --pr ${{ github.event.pull_request.number }}

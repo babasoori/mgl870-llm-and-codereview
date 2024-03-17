@@ -27,6 +27,8 @@ def analyze_pr_with_openai(pr_description):
     """
     Use OpenAI to analyze the pull request description and suggest improvements.
     """
+
+
     data = {
         "model": "text-davinci-003",  # You can choose the model you prefer
         "prompt": f"Review the following GitHub pull request description and provide a summary and suggestions for improvement:\n\n'{pr_description}'",

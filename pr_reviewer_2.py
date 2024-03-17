@@ -33,16 +33,17 @@ def review_pull_request(repo_name, pr_number):
 
     # Concatenate file changes to send to OpenAI
     changes = ""
-    for file in pr_files[:3]:  # Limit to first 3 files to stay within token limits
+    for file in pr_files:  # Limit to first 3 files to stay within token limits
         changes += f"File: {file.filename}\n+++ {file.patch}\n\n"
 
     # Construct the prompt for OpenAI
     prompt = (
         f"Review the following GitHub Pull Request changes:\n{changes}\nProvide a brief description of the changes"
         f" and make a suggestion for improvement of the code in the PR request,\n "
-        f"because your comment will be posted as a PR comment, Give me code snippet suggestion on how it the "
+        f"because your comment will be posted as a PR comment. Give me code snippet as suggestion on how it make "
+        f"it better with the code. For example, if the code is a bit messy, how can it be improved, what kind of"
         f"changes can be better, how can the code be improved, like more comment, less variables or something "
-        f"like that. Thanks.")
+        f"like that. Also, add code snippets were it is applicable. Thanks.")
 
     run = client.beta.threads.create_and_run(
         assistant_id=ASSISTANT_ID,

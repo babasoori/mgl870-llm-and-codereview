@@ -44,7 +44,7 @@ def review_pull_request(repo_name, pr_number):
         f"snippet with your suggestions and for refactoring the code for the pull request. Always add a code snippet "
         f"with a suggestion and one for refactoring. This will give the developer new ideas to improve their code\n "
         f"Your feedback will be posted as a comment for the PR. Also when you add a suggestion add a corresponding code "
-        f"snippet to explain the improvement\n"
+        f"snippet to explain the improvement. Also give the HOW TO DO the changes or improvement you suggest\n"
         f"This will provide the developer with useful insights for improving the code and making the pull request "
         f"better\n. "
         f"The suggestion and especially the code snippets are for giving tangible and actionable feedback. \n"

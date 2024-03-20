@@ -38,12 +38,15 @@ def review_pull_request(repo_name, pr_number):
 
     # Construct the prompt for OpenAI
     prompt = (
-        f"Review the following GitHub Pull Request changes:\n{changes}\nProvide a brief description of the changes"
-        f" and make a suggestion for improvement of the code in the PR request,\n "
-        f"because your comment will be posted as a PR comment. Give me code snippet as suggestion on how it make "
-        f"it better with the code. For example, if the code is a bit messy, how can it be improved, what kind of"
-        f"changes can be better, how can the code be improved, like more comment, less variables or something "
-        f"like that. Also, add code snippets were it is applicable. Thanks.")
+        f"Review the following GitHub Pull Request changes:\n"
+        f"{changes}\n"
+        f"Provide a brief description of the changes, make suggestions for improvement of the code and provide code"
+        f"snippet with your suggestions for the pull request.\n "
+        f"Your feedback will be posted as a comment for the PR.\n"
+        f"This will provide the developer with useful insights for improving the code and making the pull request "
+        f"better\n. "
+        f"The suggestion and espicially the code snipets are for giving tangible and actionable feedback. \n"
+        f"Thanks for you help.")
 
     run = client.beta.threads.create_and_run(
         assistant_id=ASSISTANT_ID,

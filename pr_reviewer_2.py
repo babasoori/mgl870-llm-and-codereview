@@ -41,11 +41,11 @@ def review_pull_request(repo_name, pr_number):
         f"Review the following GitHub Pull Request changes:\n"
         f"{changes}\n"
         f"Provide a brief description of the changes, make suggestions for improvement of the code and provide code"
-        f"snippet with your suggestions for the pull request.\n "
+        f"snippet with your suggestions or for refactoring the code for the pull request.\n "
         f"Your feedback will be posted as a comment for the PR.\n"
         f"This will provide the developer with useful insights for improving the code and making the pull request "
         f"better\n. "
-        f"The suggestion and espicially the code snipets are for giving tangible and actionable feedback. \n"
+        f"The suggestion and especially the code snippets are for giving tangible and actionable feedback. \n"
         f"Thanks for you help.")
 
     run = client.beta.threads.create_and_run(
